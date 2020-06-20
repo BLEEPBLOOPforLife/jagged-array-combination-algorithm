@@ -20,7 +20,6 @@ public class JaggedArrayCombinationAlgorithm {
 
 	// Generates an arraylist of string arrays containing all possible combinations of strings in a jagged array.
 	public static ArrayList< String[ ] > processCombinations( String[ ][ ] array ) {
-		ArrayList< String[ ] > output = new ArrayList< String[ ] >( );
 		int[ ] arrayLengths = new int[ array.length ]; // Holds the lengths of the jagged arrays.
 
 		for ( int i = 0; i < array.length; i++ ) { // Populate array lengths.
@@ -38,6 +37,8 @@ public class JaggedArrayCombinationAlgorithm {
 		for ( int length : arrayLengths ) { // Multiply on the lengths to get the total number of combinations.
 			totalNumberOfCombinations *= length;
 		}
+		
+		ArrayList< String[ ] > output = new ArrayList< String[ ] >( totalNumberOfCombinations );
 
 		for ( int currentComboIndex = 1; currentComboIndex <= totalNumberOfCombinations; currentComboIndex++ ) { // One iteration per combination.
 			int[ ] currentCombination = new int[ array.length ]; // Holds the current combination.
